@@ -7,22 +7,18 @@ const ContactPage = () => {
   }
 
   return (
-    <>
-      <MetaTags title="Contact" description="Contact page" />
+    <Form onSubmit={onSubmit}>
+      <label htmlFor="name">Name</label>
+      <TextField name="name" validation={{ required: true }} />
 
-      <Form onSubmit={onSubmit}>
-        <label htmlFor="name">Name</label>
-        <TextField name="name" required />
+      <label htmlFor="email">Email</label>
+      <TextField name="email" validation={{ required: true }} />
 
-        <label htmlFor="email">Email</label>
-        <TextField name="email" required />
+      <label htmlFor="message">Message</label>
+      <TextAreaField name="message" validation={{ required: true }} />
 
-        <label htmlFor="message">Message</label>
-        <TextAreaField name="message" required />
-
-        <Submit>Save</Submit>
-      </Form>
-    </>
+      <Submit>Save</Submit>
+    </Form>
   )
 }
 
