@@ -1,4 +1,4 @@
-import { Form, TextField } from '@redwoodjs/forms'
+import { Form, TextField, Submit } from '@redwoodjs/forms'
 import { MetaTags } from '@redwoodjs/web'
 
 const ContactPage = () => {
@@ -8,6 +8,7 @@ const ContactPage = () => {
 
       <Form>
         <TextField name="input" />
+        <Submit>Save</Submit>
       </Form>
     </>
   )
