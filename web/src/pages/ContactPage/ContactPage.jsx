@@ -12,13 +12,13 @@ const ContactPage = () => {
 
       <Form onSubmit={onSubmit}>
         <label htmlFor="name">Name</label>
-        <TextField name="name" />
+        <TextField name="name" required />
 
         <label htmlFor="email">Email</label>
-        <TextField name="email" />
+        <TextField name="email" required />
 
         <label htmlFor="message">Message</label>
-        <TextAreaField name="message" />
+        <TextAreaField name="message" required />
 
         <Submit>Save</Submit>
       </Form>
