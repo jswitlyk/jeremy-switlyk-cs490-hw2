@@ -7,6 +7,7 @@ import {
   FieldError,
 } from '@redwoodjs/forms'
 import { MetaTags, useMutation } from '@redwoodjs/web'
+import { toast, Toaster } from '@redwoodjs/web/toast'
 
 const CREATE_CONTACT = gql`
   mutation CreateContactMutation($input: CreateContactInput!) {
@@ -17,7 +18,11 @@ const CREATE_CONTACT = gql`
 `
 
 const ContactPage = () => {
-  const [create] = useMutation(CREATE_CONTACT)
+  const [create, { loading, error }] = useMutation(CREATE_CONTACT, {
+    onCompleted: () => {
+      toast.success('Thank you for your submission!')
+    },
+  })
   const onSubmit = (data) => {
     create({ variables: { input: data } })
   }
